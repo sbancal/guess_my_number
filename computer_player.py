@@ -8,11 +8,9 @@ Created on 2020-10-02
 This script will try to guess the mysterious number
 prepared by guess_my_number.GuessMachine.
 
-It's strategy is to try random numbers between min and max.
+It's strategy is to try middle number between min and max.
 It'll adapt min and max values to match GuessMachine answers.
 """
-
-import random
 
 from guess_my_number import MIN, MAX, GuessMachine
 
@@ -21,7 +19,7 @@ if __name__ == '__main__':
     max = MAX
     guess_nachine = GuessMachine()
     while True:
-        attempt = random.randint(min, max)
+        attempt = int((min + max)/2)
         result = guess_nachine.guess(attempt)
         print('tried %d : %s' % (attempt, result))
         if result == 'found':
